@@ -39,7 +39,7 @@ const Services = () => {
           >
             <CanvasRevealEffect
               animationSpeed={3}
-              containerClassName=" bg-pink-900 rounded-3xl overflow-hidden"
+              containerClassName=" bg-purple-900 rounded-3xl overflow-hidden"
               colors={[
                 [255, 166, 158],
                 [221, 255, 247],

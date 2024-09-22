@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import About from "@/components/About";
 import Experiences from "@/components/Experiences";
 import Hero from "@/components/Hero";

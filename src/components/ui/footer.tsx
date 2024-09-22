@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { LinkPreview } from "./link-preview";
-import { Github, Linkedin } from "lucide-react";
 
 import ProfileImg from "../../../public/profile.png";
 import Image from "next/image";
