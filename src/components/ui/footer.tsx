@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { LinkPreview } from "./link-preview";
-
 import ProfileImg from "../../../public/profile.png";
 import Image from "next/image";
 import {
@@ -8,21 +7,7 @@ import {
   IconBrandLinkedin,
   IconBrandX,
 } from "@tabler/icons-react";
-
-const menus = [
-  {
-    name: "Home",
-    href: "#",
-  },
-  {
-    name: "About",
-    href: "#about",
-  },
-  {
-    name: "Projects",
-    href: "#projects",
-  },
-];
+import { navItems } from "@/data";
 
 const Footer = () => {
   return (
@@ -38,15 +23,17 @@ const Footer = () => {
         <h4 className="text-lg font-bold text-white">Arfan Roky</h4>
       </div>
       <div className="flex items-center gap-12">
-        {menus.map((menu) => (
-          <Link
-            className="text-white text-sm leading-normal tracking-wide"
-            key={menu.href}
-            href={menu.href}
-          >
-            {menu.name}
-          </Link>
-        ))}
+        {navItems
+          .filter((item) => item.name !== "Home")
+          .map((menu) => (
+            <Link
+              className="text-white text-sm leading-normal tracking-wide"
+              key={menu.link}
+              href={menu.link}
+            >
+              {menu.name}
+            </Link>
+          ))}
         <Link
           className="text-white text-sm leading-normal tracking-wide"
           href={"mailto:arfanroky.dev@gmail.com"}

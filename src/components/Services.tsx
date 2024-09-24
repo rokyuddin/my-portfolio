@@ -8,12 +8,12 @@ const Services = () => {
   return (
     <section id="services">
       <div className="container w-full py-20 flex flex-col gap-10">
-        <div className="flex flex-col justify-center items-center max-w-2xl mx-auto gap-2">
+        <div className="flex flex-col lg:justify-center lg:items-center max-w-2xl mx-auto gap-2">
           <p className="uppercase text-sm text-white">Services</p>
-          <h1 className="text-3xl font-bold text-white">
+          <h1 className="text-xl lg:text-3xl font-bold text-white">
             Top Notch <span className="text-blue-500">Creative Solutions</span>
           </h1>
-          <p className="text-center text-sm md:text-base font-normal tracking-wide leading-loose text-zinc-400">
+          <p className="lg:text-center text-sm md:text-base font-normal tracking-wide leading-loose text-zinc-400">
             Delivering high-quality, innovative web development services to meet
             your unique needs. From custom website development and performance
             optimization to comprehensive maintenance and support, I provide
@@ -21,7 +21,7 @@ const Services = () => {
             success.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 lg:gap-12 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 w-full">
           <Card
             title="Custom Website Development"
             icon={<AceternityIcon order="Service 1" />}
@@ -85,7 +85,7 @@ const Card = ({
       onMouseLeave={() => setHovered(false)}
       // change h-[30rem] to h-[35rem], add rounded-3xl
       className="border border-black/[0.2] group/canvas-card flex items-center justify-center
-       dark:border-white/[0.2]  max-w-full w-full mx-auto p-4 relative lg:h-[35rem] rounded-3xl "
+       dark:border-white/[0.2]  w-full p-4 relative lg:h-[35rem] rounded-3xl "
       style={{
         //   add these two
         //   you can generate the color from here https://cssgradient.io/

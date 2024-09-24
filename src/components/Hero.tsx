@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <LampContainer className="pt-40 ">
-      <motion.p className="mt-8 uppercase leading-[140%] tracking-wider text-white text-sm">
+    <LampContainer className="pt-60 lg:pt-40 ">
+      <motion.p className="mt-16 lg:mt-8 uppercase leading-[140%] tracking-wider text-white text-sm">
         Dynamic Web Magic with Next.js
       </motion.p>
       <motion.h1
@@ -17,7 +17,7 @@ const Hero = () => {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-bold tracking-tight text-transparent md:text-7xl"
+        className="bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-2xl sm:text-4xl  lg:text-7xl font-bold tracking-tight text-transparent"
       >
         Transforming Concepts into <br /> Seamless{" "}
         <span className="text-blue-800">User Experiences</span>
