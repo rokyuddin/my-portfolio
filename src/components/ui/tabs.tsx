@@ -1,9 +1,31 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { SplitWords } from "./split-text";
+
+const headingAnimationParentVariants: Variants = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.06,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const slideVariants: Variants = {
+  initial: {
+    y: 20,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+  },
+};
 
 type Tab = {
   value: string;
@@ -39,14 +61,19 @@ export const Tabs = ({
 
   return (
     <div className="flex flex-col md:flex-row gap-8 sm:gap-12 lg:gap-16">
-      <div
+      <motion.div
+        initial="initial"
+        whileInView={"animate"}
+        viewport={{ once: true, amount: 0.5 }}
+        variants={headingAnimationParentVariants}
         className={cn(
           "w-full md:w-32 flex flex-row lg:flex-col justify-start [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar",
           containerClassName
         )}
       >
         {propTabs.map((tab, idx) => (
-          <button
+          <motion.button
+            variants={slideVariants}
             key={tab.title}
             onClick={() => {
               moveSelectedTabToTop(idx);
@@ -79,54 +106,76 @@ export const Tabs = ({
               )}
               {tab.title}
             </span>
-          </button>
+          </motion.button>
         ))}
-      </div>
+      </motion.div>
 
-      <div className="w-full">
+      <motion.div
+        initial="initial"
+        whileInView={"animate"}
+        viewport={{ once: true, amount: 0.5 }}
+        variants={headingAnimationParentVariants}
+        className="w-full"
+      >
         <h3 className="text-xl font-semibold mb-1 text-white">
-          {active.content?.position}{" "}
-          <span className="text-primary">@ {active.content?.company}</span>
+          <SplitWords variants={slideVariants}>
+            {active.content?.position}
+          </SplitWords>{" "}
+          <span className="text-primary">
+            @
+            <SplitWords variants={slideVariants}>
+              {active.content?.company}
+            </SplitWords>
+          </span>
         </h3>
-        <p className="text-sm text-muted-foreground mb-4 text-zinc-400">
+        <motion.p
+          variants={slideVariants}
+          className="text-sm text-muted-foreground mb-4 text-zinc-400"
+        >
           {active.content?.duration}
-        </p>
-        <ul className="list-none space-y-2">
+        </motion.p>
+        <motion.ul
+          initial="initial"
+          whileInView={"animate"}
+          viewport={{ once: true, amount: 0.5 }}
+          variants={headingAnimationParentVariants}
+          className="list-none space-y-2"
+        >
           {active.content?.responsibilities?.map((responsibility, index) => (
             <Step key={index} title={responsibility} />
           ))}
-        </ul>
+        </motion.ul>
         <br />
         {active.content?.skills && (
-          <div className="flex gap-2 flex-wrap">
-            {active.content?.skills.map((skill, index) => (
+          <motion.div
+            initial="initial"
+            whileInView={"animate"}
+            viewport={{ once: true, amount: 0.5 }}
+            variants={headingAnimationParentVariants}
+            className="flex gap-2 flex-wrap"
+          >
+            {active.content?.skills.map((skill) => (
               <motion.div
                 key={skill}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.1, delay: index / 40 },
-                }}
+                variants={slideVariants}
+                className="py-[0.125rem] px-2 text-xs font-medium rounded-full bg-zinc-100 text-zinc-950"
               >
-                <div className="py-[0.125rem] px-2 text-xs font-medium rounded-full bg-zinc-100 text-zinc-950">
-                  {skill}
-                </div>
+                {skill}
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
-      </div>
+      </motion.div>
     </div>
   );
 };
 
 const Step = ({ title }: { title: string }) => {
   return (
-    <li className="flex gap-2 items-start">
+    <motion.li variants={slideVariants} className="flex gap-2 items-start">
       <CheckIcon />
       <p className="text-zinc-200 text-base">{title}</p>
-    </li>
+    </motion.li>
   );
 };
 

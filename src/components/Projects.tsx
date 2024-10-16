@@ -2,27 +2,89 @@ import { projects } from "@/data";
 import { PinContainer } from "./ui/3d-pin";
 import { IconCurrentLocation } from "@tabler/icons-react";
 import Image from "next/image";
+import { Variants, motion } from "framer-motion";
+import { SplitWords } from "./ui/split-text";
+
+const headingAnimationParentVariants: Variants = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.06,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const slideVariants: Variants = {
+  initial: {
+    y: 20,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+  },
+};
 
 const Projects = () => {
   return (
     <section id="projects">
       <div className="container w-full py-20 flex flex-col gap-10">
-        <div className="flex flex-col lg:justify-center lg:items-center max-w-2xl mx-auto gap-2">
-          <p className="uppercase text-sm text-white">Projects</p>
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          variants={headingAnimationParentVariants}
+          viewport={{ once: true, amount: 0.8 }}
+          className="flex flex-col lg:justify-center lg:items-center max-w-2xl mx-auto gap-2"
+        >
+          <motion.p
+            variants={slideVariants}
+            className="uppercase text-sm text-white"
+          >
+            Projects
+          </motion.p>
           <h1 className="text-xl lg:text-3xl font-bold text-white">
-            Top Notch <span className="text-blue-500">Creative Solutions</span>
+            <SplitWords variants={slideVariants}>
+              Innovative Solutions
+            </SplitWords>{" "}
+            <span className="text-blue-500">
+              <SplitWords variants={slideVariants}>
+                Across Industries
+              </SplitWords>
+            </span>
           </h1>
-          <p className="lg:text-center text-sm md:text-base font-normal tracking-wide leading-loose text-zinc-400">
-            Delivering high-quality, innovative web development services to meet
-            your unique needs. From custom website development and performance
-            optimization to comprehensive maintenance and support, I provide
-            exceptional solutions that enhance your online presence and drive
-            success.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 w-full">
+          <motion.p
+            variants={slideVariants}
+            className="lg:text-center text-sm md:text-base font-normal tracking-wide leading-loose text-zinc-400"
+          >
+            A collection of diverse projects showcasing my expertise in
+            developing dynamic, user-focused websites. From a portfolio for a
+            motion designer, a chauffeur service booking platform, to an auto
+            parts product showcase, each project demonstrates my ability to
+            create tailored solutions that drive engagement and deliver results.
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          variants={headingAnimationParentVariants}
+          viewport={{ once: true, amount: 0.8 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 w-full"
+        >
           {projects.map((item) => (
-            <div
+            <motion.div
+              variants={{
+                initial: {
+                  opacity: 0,
+                },
+                animate: {
+                  opacity: 1,
+                },
+                exit: {
+                  opacity: 0,
+                },
+              }}
               className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center w-full"
               key={item.id}
             >
@@ -72,9 +134,9 @@ const Projects = () => {
                   </div>
                 </div>
               </PinContainer>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -14,6 +14,30 @@ import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collisi
 import { Spotlight } from "./ui/spotlight";
 import Experiences from "./Experiences";
 
+import { motion, Variants } from "framer-motion";
+import { SplitWords } from "./ui/split-text";
+
+const headingAnimationParentVariants: Variants = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.06,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const slideVariants: Variants = {
+  initial: {
+    y: 20,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
 const About = () => {
   // Function to generate a simple blur data URL
   const generateBlurPlaceholder = (w: number, h: number) => {
@@ -54,13 +78,34 @@ const About = () => {
         <article className="container w-full py-20 flex flex-col gap-10 lg:gap-4">
           <div className="flex flex-col-reverse lg:flex-row gap-10">
             <div className="flex-1 flex flex-col gap-2">
-              <div className="flex flex-col  gap-2">
-                <p className="uppercase text-sm text-white">About</p>
+              <motion.div
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.8 }}
+                variants={headingAnimationParentVariants}
+                className="flex flex-col  gap-2"
+              >
+                <motion.p
+                  variants={slideVariants}
+                  className="uppercase text-sm text-white"
+                >
+                  About
+                </motion.p>
                 <h1 className="text-xl lg:text-3xl font-bold text-white">
-                  Learn To <span className="text-blue-500">Develop Sites</span>{" "}
-                  With Expertise Developer
+                  <SplitWords variants={slideVariants}>Learn To</SplitWords>{" "}
+                  <span className="text-blue-500">
+                    <SplitWords variants={slideVariants}>
+                      Develop Sites
+                    </SplitWords>
+                  </span>{" "}
+                  <SplitWords variants={slideVariants}>
+                    With Expertise Developer
+                  </SplitWords>
                 </h1>
-                <p className="mt-4 text-sm md:text-base font-normal tracking-wide leading-loose text-zinc-400">
+                <motion.p
+                  variants={slideVariants}
+                  className="mt-4 text-sm md:text-base font-normal tracking-wide leading-loose text-zinc-400"
+                >
                   Meet Arfan Roky, the self-taught frontend enthusiast who can
                   transform ideas into sleek, responsive web applications. His
                   dedication to crafting clean, intuitive user experiences is
@@ -68,15 +113,27 @@ const About = () => {
                   and trends. When he&apos;s not coding, you’ll find him
                   perfecting design details or streamlining workflows with his
                   keen eye for efficiency.
-                </p>
-              </div>
+                </motion.p>
+              </motion.div>
 
               <div className="flex flex-col lg:flex-row  gap-8">
-                <div className="flex flex-col gap-2">
-                  <h4 className="text-white font-medium tracking-wide leading-loose">
+                <motion.div
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true, amount: 0.8 }}
+                  variants={headingAnimationParentVariants}
+                  className="flex flex-col gap-2"
+                >
+                  <motion.h4
+                    variants={slideVariants}
+                    className="text-white font-medium tracking-wide leading-loose"
+                  >
                     Contact
-                  </h4>
-                  <div className="flex items-center gap-2">
+                  </motion.h4>
+                  <motion.div
+                    variants={slideVariants}
+                    className="flex items-center gap-2"
+                  >
                     <IconMail size={18} className="text-blue-500" />
                     <Link
                       href={"mailto:arfanroky.dev@gmail.com"}
@@ -84,8 +141,11 @@ const About = () => {
                     >
                       arfanroky.dev@gmail.com
                     </Link>
-                  </div>
-                  <div className="flex items-center gap-2">
+                  </motion.div>
+                  <motion.div
+                    variants={slideVariants}
+                    className="flex items-center gap-2"
+                  >
                     <IconPhone size={18} className="text-blue-500" />
                     <Link
                       href={"to:+8801611695544"}
@@ -93,13 +153,25 @@ const About = () => {
                     >
                       +8801611695544
                     </Link>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <h4 className="text-white font-medium tracking-wide leading-loose">
+                  </motion.div>
+                </motion.div>
+                <motion.div
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true, amount: 0.8 }}
+                  variants={headingAnimationParentVariants}
+                  className="flex flex-col gap-2"
+                >
+                  <motion.h4
+                    variants={slideVariants}
+                    className="text-white font-medium tracking-wide leading-loose"
+                  >
                     Social
-                  </h4>
-                  <div className="flex items-center gap-2">
+                  </motion.h4>
+                  <motion.div
+                    variants={slideVariants}
+                    className="flex items-center gap-2"
+                  >
                     <LinkPreview url="https://x.com/arfanroky_dev">
                       <div className="w-8 h-8 rounded-full bg-zinc-700 backdrop-blur-lg  text-white flex items-center justify-center">
                         <IconBrandX size={16} />
@@ -115,13 +187,29 @@ const About = () => {
                         <IconBrandGithub size={16} />
                       </div>
                     </LinkPreview>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <h4 className="text-white font-medium tracking-wide leading-loose">
+                  </motion.div>
+                </motion.div>
+                <motion.div
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true, amount: 0.8 }}
+                  variants={headingAnimationParentVariants}
+                  className="flex flex-col gap-2"
+                >
+                  <motion.h4
+                    variants={slideVariants}
+                    className="text-white font-medium tracking-wide leading-loose"
+                  >
                     My Stack
-                  </h4>
-                  <ul className="flex items-center flex-wrap gap-2">
+                  </motion.h4>
+
+                  <motion.ul
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true, amount: 0.8 }}
+                    variants={slideVariants}
+                    className="flex items-center flex-wrap gap-2"
+                  >
                     {[
                       "Javascript",
                       "Typescript",
@@ -132,18 +220,25 @@ const About = () => {
                       "Tailwind",
                       "Material UI",
                     ].map((item, i) => (
-                      <li
+                      <motion.li
+                        variants={slideVariants}
                         key={i}
                         className="py-1 px-4 rounded-full border border-blue-500 text-sm text-white"
                       >
                         {item}
-                      </li>
+                      </motion.li>
                     ))}
-                  </ul>
-                </div>
+                  </motion.ul>
+                </motion.div>
               </div>
             </div>
-            <div className="basis-2/5 flex justify-end ">
+            <motion.div
+              initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              className="basis-2/5 flex justify-end "
+            >
               <Image
                 src={ProfileImg}
                 alt="Arfan Roky"
@@ -155,7 +250,7 @@ const About = () => {
                 placeholder="blur"
                 blurDataURL={generateBlurPlaceholder(450, 300)}
               />
-            </div>
+            </motion.div>
           </div>
           <Experiences />
         </article>

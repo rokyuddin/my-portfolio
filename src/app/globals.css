@@ -25,11 +25,6 @@
   margin: 0;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   color: var(--black);
   background-color: #f6f6f6;

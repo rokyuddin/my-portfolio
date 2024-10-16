@@ -40,13 +40,10 @@ const Hero = () => {
           href={
             "https://drive.google.com/file/d/1hfr9Hq1b3xCFHaSFpTAF0Ahks02iCNi6/view?usp=sharing"
           }
-          target="_blank"
         >
-          <button
-            type="button"
-            className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
-          >
-            Resume
+          <button className="border text-lg font-medium relative border-neutral-200 text-white  px-8 py-2 rounded-full">
+            <span>Resume</span>
+            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
           </button>
         </Link>
       </motion.div>

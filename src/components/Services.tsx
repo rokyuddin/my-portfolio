@@ -1,27 +1,74 @@
 "use client";
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "./ui/canvas-reveal-effect";
 import { useState } from "react";
+import { Variants, motion, AnimatePresence } from "framer-motion";
+import { SplitWords } from "./ui/split-text";
+
+const headingAnimationParentVariants: Variants = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.06,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const slideVariants: Variants = {
+  initial: {
+    y: 20,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+  },
+};
 
 const Services = () => {
   return (
     <section id="services">
       <div className="container w-full py-20 flex flex-col gap-10">
-        <div className="flex flex-col lg:justify-center lg:items-center max-w-2xl mx-auto gap-2">
-          <p className="uppercase text-sm text-white">Services</p>
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          variants={headingAnimationParentVariants}
+          viewport={{ once: true, amount: 0.8 }}
+          className="flex flex-col lg:justify-center lg:items-center max-w-2xl mx-auto gap-2"
+        >
+          <motion.p
+            variants={slideVariants}
+            className="uppercase text-sm text-white"
+          >
+            Services
+          </motion.p>
           <h1 className="text-xl lg:text-3xl font-bold text-white">
-            Top Notch <span className="text-blue-500">Creative Solutions</span>
+            <SplitWords variants={slideVariants}> Top Notch</SplitWords>{" "}
+            <span className="text-blue-500">
+              <SplitWords variants={slideVariants}>
+                Creative Solutions
+              </SplitWords>
+            </span>
           </h1>
-          <p className="lg:text-center text-sm md:text-base font-normal tracking-wide leading-loose text-zinc-400">
+          <motion.p
+            variants={slideVariants}
+            className="lg:text-center text-sm md:text-base font-normal tracking-wide leading-loose text-zinc-400"
+          >
             Delivering high-quality, innovative web development services to meet
             your unique needs. From custom website development and performance
             optimization to comprehensive maintenance and support, I provide
             exceptional solutions that enhance your online presence and drive
             success.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 w-full">
+          </motion.p>
+        </motion.div>
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          variants={headingAnimationParentVariants}
+          viewport={{ once: true, amount: 0.8 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 w-full"
+        >
           <Card
             title="Custom Website Development"
             icon={<AceternityIcon order="Service 1" />}
@@ -58,7 +105,7 @@ const Services = () => {
               colors={[[125, 211, 252]]}
             />
           </Card>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -80,7 +127,8 @@ const Card = ({
 }) => {
   const [hovered, setHovered] = useState(false);
   return (
-    <div
+    <motion.div
+      variants={slideVariants}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="border border-black/[0.2] group/canvas-card flex items-center justify-center
@@ -131,7 +179,7 @@ const Card = ({
           {des}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 const AceternityIcon = ({ order }: { order: string }) => {
