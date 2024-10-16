@@ -40,6 +40,7 @@ const Hero = () => {
           href={
             "https://drive.google.com/file/d/1hfr9Hq1b3xCFHaSFpTAF0Ahks02iCNi6/view?usp=sharing"
           }
+          target="_blank"
         >
           <button className="border text-lg font-medium relative border-neutral-200 text-white  px-8 py-2 rounded-full">
             <span>Resume</span>
