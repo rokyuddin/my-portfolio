@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import { LinkPreview } from "./link-preview";
 import ProfileImg from "../../../public/profile.png";
@@ -10,6 +11,7 @@ import {
 import { navItems } from "@/data";
 import { Variants, motion } from "framer-motion";
 import { SplitWords } from "./split-text";
+import { useLenis } from "lenis/react";
 
 const headingAnimationParentVariants: Variants = {
   initial: {},
@@ -33,6 +35,8 @@ const slideVariants: Variants = {
 };
 
 const Footer = () => {
+  const lenis = useLenis()
+
   return (
     <motion.footer
       initial="initial"
@@ -75,6 +79,15 @@ const Footer = () => {
               className="text-white text-sm leading-normal tracking-wide"
               key={menu.link}
               href={menu.link}
+              onClick={() => lenis?.scrollTo(menu.link, {
+                offset: 0,
+                lerp: 0.1,
+                duration: 0.8,
+                easing: (rawValue: number) => rawValue, // Example easing function
+                immediate: false,
+                lock: false,
+                force: false,
+              })}
             >
               <motion.span variants={slideVariants}>{menu.name}</motion.span>
             </Link>
