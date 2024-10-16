@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import {useLenis} from 'lenis/react'
 
 export const FloatingNav = ({
   navItems,
@@ -22,6 +23,8 @@ export const FloatingNav = ({
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
+  const lenis = useLenis();
+
 
   // set true for the initial state so that nav bar is visible in the hero section
   const [visible, setVisible] = useState(true);
@@ -76,6 +79,15 @@ export const FloatingNav = ({
             className={cn(
               "relative p-2 items-center flex space-x-1 text-zinc-200 hover:text-blue-500"
             )}
+            onClick={() => lenis?.scrollTo(navItem.link, {
+              offset: 0,
+              lerp: 0.1,
+              duration: 0.8,
+              easing: (rawValue: number) => rawValue, // Example easing function
+              immediate: false,
+              lock: false,
+              force: false,
+            })}
           >
             <span className="block sm:hidden">{navItem.icon}</span>
             <span className="text-xs sm:text-sm">{navItem.name}</span>
