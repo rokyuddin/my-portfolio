@@ -94,7 +94,7 @@ export const Tabs = ({
               />
             )}
 
-            <span className="relative  flex items-center gap-2 text-white">
+            <div className="relative  flex items-center gap-2 text-white">
               {tab.img && (
                 <Image
                   src={tab.img}
@@ -102,10 +102,11 @@ export const Tabs = ({
                   width={20}
                   height={20}
                   priority
+                  style={{ width: "auto", height: "auto" }}
                 />
               )}
               {tab.title}
-            </span>
+            </div>
           </motion.button>
         ))}
       </motion.div>
@@ -122,9 +123,8 @@ export const Tabs = ({
             {active.content?.position}
           </SplitWords>{" "}
           <span className="text-primary">
-            @
             <SplitWords variants={slideVariants}>
-              {active.content?.company}
+              {`@ ${active.content?.company}`}
             </SplitWords>
           </span>
         </h3>

@@ -15,6 +15,16 @@ const headingAnimationParentVariants: Variants = {
   },
 };
 
+const projectsAnimationParentVariants: Variants = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.02,
+      delayChildren: 0.2,
+    },
+  },
+};
+
 const slideVariants: Variants = {
   initial: {
     y: 20,
@@ -65,8 +75,8 @@ const Services = () => {
         <motion.div
           initial="initial"
           whileInView="animate"
-          variants={headingAnimationParentVariants}
-          viewport={{ once: true, amount: 0.8 }}
+          variants={projectsAnimationParentVariants}
+          viewport={{ once: true, amount: 0.2 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 w-full"
         >
           <Card
@@ -132,7 +142,7 @@ const Card = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="border border-black/[0.2] group/canvas-card flex items-center justify-center
-        w-full p-4 relative lg:h-[35rem] rounded-3xl "
+        w-full p-4 relative h-[35rem] rounded-3xl "
       style={{
         background: "rgb(4,7,29)",
         backgroundColor:
@@ -149,6 +159,7 @@ const Card = ({
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             className="h-full w-full absolute inset-0"
           >
             {children}

@@ -9,7 +9,7 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import {useLenis} from 'lenis/react'
+import { useLenis } from "lenis/react";
 
 export const FloatingNav = ({
   navItems,
@@ -24,7 +24,6 @@ export const FloatingNav = ({
 }) => {
   const { scrollYProgress } = useScroll();
   const lenis = useLenis();
-
 
   // set true for the initial state so that nav bar is visible in the hero section
   const [visible, setVisible] = useState(true);
@@ -62,7 +61,7 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          "flex max-w-fit  fixed top-10 inset-x-0 mx-auto border border-transparent rounded-full bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-2 lg:px-6 py-2 items-center justify-center space-x-1 lg:space-x-4",
+          "flex max-w-fit  fixed top-8 inset-x-0 mx-auto border border-transparent rounded-full bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-2 lg:px-6 py-2 items-center justify-center space-x-1 lg:space-x-4",
           className
         )}
         style={{
@@ -79,15 +78,17 @@ export const FloatingNav = ({
             className={cn(
               "relative p-2 items-center flex space-x-1 text-zinc-200 hover:text-blue-500"
             )}
-            onClick={() => lenis?.scrollTo(navItem.link, {
-              offset: 0,
-              lerp: 0.1,
-              duration: 0.8,
-              easing: (rawValue: number) => rawValue, // Example easing function
-              immediate: false,
-              lock: false,
-              force: false,
-            })}
+            onClick={() =>
+              lenis?.scrollTo(navItem.link, {
+                offset: 0,
+                lerp: 0.1,
+                duration: 0.8,
+                easing: (rawValue: number) => rawValue, // Example easing function
+                immediate: false,
+                lock: false,
+                force: false,
+              })
+            }
           >
             <span className="block sm:hidden">{navItem.icon}</span>
             <span className="text-xs sm:text-sm">{navItem.name}</span>

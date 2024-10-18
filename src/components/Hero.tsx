@@ -17,10 +17,13 @@ const Hero = () => {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-2xl sm:text-4xl  lg:text-7xl font-bold tracking-tight text-transparent"
+        style={{
+          lineHeight: "1.2em",
+        }}
+        className="bg-gradient-to-br from-slate-50 lg:from-slate-300 to-slate-50 lg:to-slate-500 py-4 bg-clip-text text-center text-2xl sm:text-4xl  lg:text-7xl font-bold tracking-tight leading-10 text-transparent"
       >
         Transforming Concepts into <br /> Seamless{" "}
-        <span className="text-blue-800">User Experiences</span>
+        <span className="lg:text-blue-800">User Experiences</span>
       </motion.h1>
       <motion.p
         initial={{ opacity: 0.5, y: 100 }}

@@ -246,6 +246,7 @@ const About = () => {
                 height={300}
                 quality={100}
                 priority
+                style={{ width: "auto", height: "auto" }}
                 className="object-cover bg-blue-500 rounded-full"
                 placeholder="blur"
                 blurDataURL={generateBlurPlaceholder(450, 300)}

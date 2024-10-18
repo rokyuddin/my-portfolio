@@ -15,6 +15,16 @@ const headingAnimationParentVariants: Variants = {
   },
 };
 
+const projectsAnimationParentVariants: Variants = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.02,
+      delayChildren: 0.2,
+    },
+  },
+};
+
 const slideVariants: Variants = {
   initial: {
     y: 20,
@@ -68,32 +78,23 @@ const Projects = () => {
         <motion.div
           initial="initial"
           whileInView="animate"
-          variants={headingAnimationParentVariants}
-          viewport={{ once: true, amount: 0.8 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 w-full"
+          variants={projectsAnimationParentVariants}
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 md:gap-12 w-full"
         >
           {projects.map((item) => (
             <motion.div
-              variants={{
-                initial: {
-                  opacity: 0,
-                },
-                animate: {
-                  opacity: 1,
-                },
-                exit: {
-                  opacity: 0,
-                },
-              }}
-              className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center w-full"
               key={item.id}
+              variants={slideVariants}
+              className="min-h-[25rem] flex items-center justify-center w-full"
             >
               <PinContainer title={item.title} href={item.link}>
-                <div className="relative flex items-center justify-center sm:w-96 w-[80vw] rounded-lg overflow-hidden h-[25svh] md:h-[30svh] mb-4">
+                <div className="relative flex items-center justify-center sm:w-96 w-[80vw] rounded-lg overflow-hidden h-[30svh] mb-4">
                   <Image
                     src={item.img}
                     alt="cover"
                     fill
+                    priority
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
@@ -121,6 +122,7 @@ const Projects = () => {
                           alt={index.toString()}
                           width={20}
                           height={20}
+                          style={{ width: "auto", height: "auto" }}
                         />
                       </div>
                     ))}
