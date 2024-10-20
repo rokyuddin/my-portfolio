@@ -60,7 +60,7 @@ export const Tabs = ({
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-8 sm:gap-12 lg:gap-16">
+    <div className="flex flex-col lg:flex-row gap-8 sm:gap-12 lg:gap-16">
       <motion.div
         initial="initial"
         whileInView={"animate"}
@@ -88,19 +88,19 @@ export const Tabs = ({
                 layoutId="clickedbutton"
                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
                 className={cn(
-                  "absolute inset-0 bg-zinc-800 rounded-full ",
+                  "absolute inset-0 bg-zinc-800 rounded-full px-2",
                   activeTabClassName
                 )}
               />
             )}
 
-            <div className="relative  flex items-center gap-2 text-white">
+            <div className="relative flex justify-center items-center gap-2 text-white px-2">
               {tab.img && (
                 <Image
                   src={tab.img}
                   alt={tab.title}
-                  width={20}
-                  height={20}
+                  width={18}
+                  height={18}
                   priority
                   style={{ width: "auto", height: "auto" }}
                 />
@@ -118,7 +118,7 @@ export const Tabs = ({
         variants={headingAnimationParentVariants}
         className="w-full"
       >
-        <h3 className="text-xl font-semibold mb-1 text-white">
+        <h3 className="text-xl 3xl:text-2xl font-semibold mb-1 text-white">
           <SplitWords variants={slideVariants}>
             {active.content?.position}
           </SplitWords>{" "}
@@ -130,7 +130,7 @@ export const Tabs = ({
         </h3>
         <motion.p
           variants={slideVariants}
-          className="text-sm text-muted-foreground mb-4 text-zinc-400"
+          className="text-sm lg:text-base 3xl:text-lg text-muted-foreground mb-4 text-zinc-400"
         >
           {active.content?.duration}
         </motion.p>
@@ -158,7 +158,7 @@ export const Tabs = ({
               <motion.div
                 key={skill}
                 variants={slideVariants}
-                className="py-[0.125rem] px-2 text-xs font-medium rounded-full bg-zinc-100 text-zinc-950"
+                className="py-[0.125rem] px-2 3xl:px-4 text-xs lg:text-sm 3xl:text-base font-medium rounded-full bg-zinc-100 text-zinc-950"
               >
                 {skill}
               </motion.div>
@@ -174,7 +174,7 @@ const Step = ({ title }: { title: string }) => {
   return (
     <motion.li variants={slideVariants} className="flex gap-2 items-start">
       <CheckIcon />
-      <p className="text-zinc-200 text-base">{title}</p>
+      <p className="text-zinc-200 text-base 3xl:text-lg">{title}</p>
     </motion.li>
   );
 };

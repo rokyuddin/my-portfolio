@@ -47,7 +47,7 @@ export default function Experiences() {
         viewport={{ once: true, amount: 0.5 }}
         className="flex flex-col gap-2"
       >
-        <p className="uppercase text-sm text-white">Experience</p>
+        <p className="uppercase text-sm 3xl:text-lg text-white">Experience</p>
         <h1 className="text-xl lg:text-3xl font-bold text-white">
           <SplitWords variants={slideVariants}>Real</SplitWords>{" "}
           <span className="text-blue-500">

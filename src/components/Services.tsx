@@ -49,7 +49,7 @@ const Services = () => {
         >
           <motion.p
             variants={slideVariants}
-            className="uppercase text-sm text-white"
+            className="uppercase text-sm 3xl:text-lg text-white"
           >
             Services
           </motion.p>
@@ -63,7 +63,7 @@ const Services = () => {
           </h1>
           <motion.p
             variants={slideVariants}
-            className="lg:text-center text-sm md:text-base font-normal tracking-wide leading-loose text-zinc-400"
+            className="lg:text-center text-sm md:text-base 3xl:text-lg font-normal tracking-wide leading-loose text-zinc-400"
           >
             Delivering high-quality, innovative web development services to meet
             your unique needs. From custom website development and performance

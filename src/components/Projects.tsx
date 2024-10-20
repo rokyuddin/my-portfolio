@@ -1,6 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 import { projects } from "@/data";
 import { PinContainer } from "./ui/3d-pin";
-import { IconCurrentLocation } from "@tabler/icons-react";
+import { IconArrowRight } from "@tabler/icons-react";
 import Image from "next/image";
 import { Variants, motion } from "framer-motion";
 import { SplitWords } from "./ui/split-text";
@@ -49,7 +50,7 @@ const Projects = () => {
         >
           <motion.p
             variants={slideVariants}
-            className="uppercase text-sm text-white"
+            className="uppercase text-sm 3xl:text-lg text-white"
           >
             Projects
           </motion.p>
@@ -65,7 +66,7 @@ const Projects = () => {
           </h1>
           <motion.p
             variants={slideVariants}
-            className="lg:text-center text-sm md:text-base font-normal tracking-wide leading-loose text-zinc-400"
+            className="lg:text-center text-sm md:text-base 3xl:text-lg font-normal tracking-wide leading-loose text-zinc-400"
           >
             A collection of diverse projects showcasing my expertise in
             developing dynamic, user-focused websites. From a portfolio for a
@@ -80,30 +81,28 @@ const Projects = () => {
           whileInView="animate"
           variants={projectsAnimationParentVariants}
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 md:gap-12 w-full"
+          className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] 3xl:grid-cols-3 place-items-center sm:place-self-stretch  gap-8 md:gap-12"
         >
           {projects.map((item) => (
             <motion.div
               key={item.id}
               variants={slideVariants}
-              className="min-h-[25rem] flex items-center justify-center w-full"
+              className="  h-[25rem] lg:min-h-[32.5rem] 3xl:h-[40rem] flex items-center justify-center  w-[80vw] sm:w-[380px] 4xl:w-[650px]"
             >
-              <PinContainer title={item.title} href={item.link}>
-                <div className="relative flex items-center justify-center sm:w-96 w-[80vw] rounded-lg overflow-hidden h-[30svh] mb-4">
-                  <Image
+              <PinContainer title={"visit"} href={item.link}>
+                <div className="flex items-center justify-center  w-[80vw] sm:w-[380px] 4xl:w-[650px] overflow-hidden h-[200px] lg:h-[250px] 4xl:h-[400px]">
+                  <img
                     src={item.img}
                     alt="cover"
-                    fill
-                    priority
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="z-10 object-cover object-center rounded-lg"
                   />
                 </div>
 
-                <h1 className="font-bold lg:text-xl md:text-xl text-base line-clamp-1 text-white">
+                <h1 className="font-bold text-base  md:text-xl lg:text-xl line-clamp-1 text-white">
                   {item.title}
                 </h1>
 
-                <p className="lg:text-base lg:font-normal font-light text-sm line-clamp-3 text-zinc-400">
+                <p className="text-sm lg:text-base 3xl:text-lg mt-2 lg:font-normal font-light  line-clamp-3 text-zinc-400">
                   {item.des}
                 </p>
 
@@ -129,10 +128,10 @@ const Projects = () => {
                   </div>
 
                   <div className="flex justify-center items-center">
-                    <p className="flex  text-sm text-blue-500">
+                    <p className="flex text-sm text-blue-500">
                       Check Live Site
                     </p>
-                    <IconCurrentLocation className="ms-3" color="#CBACF9" />
+                    <IconArrowRight className="ms-3 -rotate-45 text-blue-500" />
                   </div>
                 </div>
               </PinContainer>

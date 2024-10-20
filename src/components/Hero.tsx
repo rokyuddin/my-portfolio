@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <LampContainer className="pt-60 lg:pt-40 ">
-      <motion.p className="mt-16 lg:mt-8 uppercase leading-[140%] tracking-wider text-white text-sm">
+    <LampContainer className="pt-60 lg:pt-40 3xl:pt-10">
+      <motion.p className="mt-16 lg:mt-8 uppercase leading-[140%] tracking-wider text-white text-base 3xl:text-lg">
         Dynamic Web Magic with Next.js
       </motion.p>
       <motion.h1
@@ -20,7 +20,7 @@ const Hero = () => {
         style={{
           lineHeight: "1.2em",
         }}
-        className="bg-gradient-to-br from-slate-50 lg:from-slate-300 to-slate-50 lg:to-slate-500 py-4 bg-clip-text text-center text-2xl sm:text-4xl  lg:text-7xl font-bold tracking-tight leading-10 text-transparent"
+        className="bg-gradient-to-br from-slate-50 lg:from-slate-300 to-slate-50 lg:to-slate-500 py-4 bg-clip-text text-center text-2xl sm:text-4xl  lg:text-7xl 3xl:text-8xl font-bold tracking-tight leading-10 text-transparent"
       >
         Transforming Concepts into <br /> Seamless{" "}
         <span className="lg:text-blue-800">User Experiences</span>
@@ -29,7 +29,7 @@ const Hero = () => {
         initial={{ opacity: 0.5, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.9, ease: "easeInOut" }}
-        className="text-zinc-400 mx-auto text-center leading-[140%]"
+        className="text-zinc-400 mx-auto text-center leading-[140%] text-lg 3xl:text-xl"
       >
         Hi! I&apos;m Arfan Roky, a Frontend Developer based in Bangladesh.
       </motion.p>

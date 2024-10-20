@@ -87,7 +87,7 @@ const About = () => {
               >
                 <motion.p
                   variants={slideVariants}
-                  className="uppercase text-sm text-white"
+                  className="uppercase text-sm 3xl:text-lg  text-white"
                 >
                   About
                 </motion.p>
@@ -104,7 +104,7 @@ const About = () => {
                 </h1>
                 <motion.p
                   variants={slideVariants}
-                  className="mt-4 text-sm md:text-base font-normal tracking-wide leading-loose text-zinc-400"
+                  className="mt-4 text-sm md:text-base 3xl:text-lg font-normal tracking-wide leading-loose text-zinc-400"
                 >
                   Meet Arfan Roky, the self-taught frontend enthusiast who can
                   transform ideas into sleek, responsive web applications. His
@@ -137,7 +137,7 @@ const About = () => {
                     <IconMail size={18} className="text-blue-500" />
                     <Link
                       href={"mailto:arfanroky.dev@gmail.com"}
-                      className="text-zinc-400 text-sm font-light"
+                      className="text-zinc-400 text-sm 3xl:text-lg font-light"
                     >
                       arfanroky.dev@gmail.com
                     </Link>
@@ -149,7 +149,7 @@ const About = () => {
                     <IconPhone size={18} className="text-blue-500" />
                     <Link
                       href={"to:+8801611695544"}
-                      className="text-zinc-400 text-sm font-light"
+                      className="text-zinc-400 text-sm 3xl:text-lg font-light"
                     >
                       +8801611695544
                     </Link>
@@ -223,7 +223,7 @@ const About = () => {
                       <motion.li
                         variants={slideVariants}
                         key={i}
-                        className="py-1 px-4 rounded-full border border-blue-500 text-sm text-white"
+                        className="py-1 px-4 rounded-full border border-blue-500 text-sm  text-white"
                       >
                         {item}
                       </motion.li>
@@ -237,7 +237,7 @@ const About = () => {
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 1 }}
               viewport={{ once: true, amount: 0.2 }}
-              className="basis-2/5 flex justify-end "
+              className="lg:basis-[35%] flex items-center  justify-center lg:justify-end "
             >
               <Image
                 src={ProfileImg}
@@ -247,7 +247,7 @@ const About = () => {
                 quality={100}
                 priority
                 style={{ width: "auto", height: "auto" }}
-                className="object-cover bg-blue-500 rounded-full"
+                className="object-cover bg-gradient-to-t from-blue-300 via-blue-500 to-blue-300 rounded-full"
                 placeholder="blur"
                 blurDataURL={generateBlurPlaceholder(450, 300)}
               />

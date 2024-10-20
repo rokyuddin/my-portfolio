@@ -1,13 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Config } from "tailwindcss";
-
-const defaultTheme = require("tailwindcss/defaultTheme");
-
-const svgToDataUri = require("mini-svg-data-uri");
-
-const colors = require("tailwindcss/colors");
+import svgToDataUri from "mini-svg-data-uri";
 const {
   default: flattenColorPalette,
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
 const config: Config = {
@@ -42,14 +38,18 @@ const config: Config = {
           lg: "3rem",
           xl: "4rem",
           "2xl": "6rem",
+          "3xl": "8rem",
+          "4xl": "12rem",
         },
-        screens: {
-          sm: "640px",
-          md: "768px",
-          lg: "1024px",
-          xl: "1280px",
-          "2xl": "1536px",
-        },
+      },
+      screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+        "3xl": "1920px",
+        "4xl": "2560px",
       },
       animation: {
         shimmer: "shimmer 2s linear infinite",
