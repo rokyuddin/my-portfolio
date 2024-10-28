@@ -14,21 +14,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        black: "var(--black)",
-        greyText: "var(--grey-text)",
-        borderGrey: "var(--border-grey)",
-        lightGreyText: "var(--light-grey-text)",
-        bgGrey: "var(--bg-grey)",
-        white: "var(--white)",
-        dimGrey: "var(--dim-grey)",
-        projectCardBackground: "var(--project-card-background)",
-        calloutBarAccent: "var(--callout-bar-accent)",
-        ziprecruiterGreen: "var(--ziprecruiter-green)",
-        lightCoral: "var(--light-coral)",
-        purpleAccent: "var(--purple-accent)",
+      fontFamily: {
+        geistMono: "var(--font-geist-mono)",
+        geistSans: "var(--font-geist-sans)",
+        roboto: "var(--font-roboto)",
+        poppins: "var(--font-poppins)",
       },
       container: {
         center: true,
