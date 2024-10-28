@@ -1,5 +1,5 @@
 "use client";
-import ProfileImg from "../../public/Roky_main.png";
+import ProfileImg from "../../public/myImage/Roky_main.png";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,30 +13,9 @@ import { LinkPreview } from "./ui/link-preview";
 import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
 import { Spotlight } from "./ui/spotlight";
 import Experiences from "./Experiences";
-
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { SplitWords } from "./ui/split-text";
-
-const headingAnimationParentVariants: Variants = {
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.06,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const slideVariants: Variants = {
-  initial: {
-    y: 20,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-  },
-};
+import { parentVariants, slideVariants } from "@/lib/utils";
 
 const About = () => {
   // Function to generate a simple blur data URL
@@ -62,7 +41,7 @@ const About = () => {
     return `data:image/svg+xml;base64,${toBase64(svg)}`;
   };
   return (
-    <section id="about" className="relative">
+    <section data-testid="about-section" id="about" className="relative">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -82,7 +61,7 @@ const About = () => {
                 initial="initial"
                 whileInView="animate"
                 viewport={{ once: true, amount: 0.8 }}
-                variants={headingAnimationParentVariants}
+                variants={parentVariants}
                 className="flex flex-col  gap-2"
               >
                 <motion.p
@@ -121,7 +100,7 @@ const About = () => {
                   initial="initial"
                   whileInView="animate"
                   viewport={{ once: true, amount: 0.8 }}
-                  variants={headingAnimationParentVariants}
+                  variants={parentVariants}
                   className="flex flex-col gap-2"
                 >
                   <motion.h4
@@ -159,7 +138,7 @@ const About = () => {
                   initial="initial"
                   whileInView="animate"
                   viewport={{ once: true, amount: 0.8 }}
-                  variants={headingAnimationParentVariants}
+                  variants={parentVariants}
                   className="flex flex-col gap-2"
                 >
                   <motion.h4
@@ -193,7 +172,7 @@ const About = () => {
                   initial="initial"
                   whileInView="animate"
                   viewport={{ once: true, amount: 0.8 }}
-                  variants={headingAnimationParentVariants}
+                  variants={parentVariants}
                   className="flex flex-col gap-2"
                 >
                   <motion.h4
@@ -241,7 +220,7 @@ const About = () => {
             >
               <Image
                 src={ProfileImg}
-                alt="Arfan Roky"
+                alt="Arfan Roky Profile Image"
                 width={450}
                 height={300}
                 quality={100}

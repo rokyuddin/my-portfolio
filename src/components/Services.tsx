@@ -2,48 +2,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { CanvasRevealEffect } from "./ui/canvas-reveal-effect";
 import { useState } from "react";
-import { Variants, motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { SplitWords } from "./ui/split-text";
-
-const headingAnimationParentVariants: Variants = {
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.06,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const projectsAnimationParentVariants: Variants = {
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.02,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const slideVariants: Variants = {
-  initial: {
-    y: 20,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-  },
-};
+import { childVariants, parentVariants, slideVariants } from "@/lib/utils";
 
 const Services = () => {
   return (
-    <section id="services">
+    <section data-testid="services-section" id="services">
       <div className="container w-full py-20 flex flex-col gap-10">
         <motion.div
           initial="initial"
           whileInView="animate"
-          variants={headingAnimationParentVariants}
+          variants={parentVariants}
           viewport={{ once: true, amount: 0.8 }}
           className="flex flex-col lg:justify-center lg:items-center max-w-2xl mx-auto gap-2"
         >
@@ -75,7 +45,7 @@ const Services = () => {
         <motion.div
           initial="initial"
           whileInView="animate"
-          variants={projectsAnimationParentVariants}
+          variants={childVariants}
           viewport={{ once: true, amount: 0.2 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 w-full"
         >

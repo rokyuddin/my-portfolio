@@ -4,7 +4,12 @@ export const projects = [
     title: "Motion Designer Portfolio",
     des: "Developed a sleek portfolio site with video hero section, showcasing diverse services and top-notch motion design for global impact.",
     img: "/projects/project1.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/next.svg"],
+    iconLists: [
+      "/technologies/re.svg",
+      "/technologies/tail.svg",
+      "/technologies/ts.svg",
+      "/technologies/next.svg",
+    ],
     link: "https://landing-page-umber-theta.vercel.app/",
   },
   {
@@ -12,7 +17,12 @@ export const projects = [
     title: "Red Limos Chauffeur Service",
     des: "Created a responsive website for a chauffeur service, enabling users to book various trips while managing drivers, vehicles, and clients efficiently.",
     img: "/projects/project2.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/next.svg"],
+    iconLists: [
+      "/technologies/re.svg",
+      "/technologies/tail.svg",
+      "/technologies/ts.svg",
+      "/technologies/next.svg",
+    ],
     link: "https://www.redlimos.com/",
   },
   {
@@ -20,7 +30,12 @@ export const projects = [
     title: "Modina Auto Parts Ltd",
     des: "Developed a dynamic website to showcase auto parts, featuring product search, filtering, and a sleek display of new arrivals and featured products.",
     img: "/projects/project3.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/next.svg"],
+    iconLists: [
+      "/technologies/re.svg",
+      "/technologies/tail.svg",
+      "/technologies/ts.svg",
+      "/technologies/next.svg",
+    ],
     link: "https://www.modinaautopartsltd.com/",
   },
 ];
@@ -48,7 +63,7 @@ export const experiences = [
   {
     value: "miicon",
     title: "Miicon",
-    img: "/miicon.webp",
+    img: "/companies/miicon.webp",
     content: {
       position: "Frontend Developer",
       company: "Miicon Solutions Limited",

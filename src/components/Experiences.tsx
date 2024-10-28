@@ -4,37 +4,18 @@ import { experiences } from "@/data";
 import { Spotlight } from "./ui/spotlight";
 import { Tabs } from "./ui/tabs";
 import { SplitWords } from "./ui/split-text";
-import { motion, Variants } from "framer-motion";
-
-const headingAnimationParentVariants: Variants = {
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.06,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const slideVariants: Variants = {
-  initial: {
-    y: 20,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-  },
-};
+import { motion } from "framer-motion";
+import { parentVariants, slideVariants } from "@/lib/utils";
 
 export default function Experiences() {
   return (
     <motion.section
       initial="initial"
       whileInView="animate"
-      variants={headingAnimationParentVariants}
+      variants={parentVariants}
       viewport={{ once: true, amount: 0.5 }}
       className="flex flex-col gap-4 relative"
+      data-testid="experiences-section"
     >
       <Spotlight
         className="-top-40 left-0 md:right-60 md:-top-10"
@@ -43,7 +24,7 @@ export default function Experiences() {
       <motion.div
         initial="initial"
         whileInView="animate"
-        variants={headingAnimationParentVariants}
+        variants={parentVariants}
         viewport={{ once: true, amount: 0.5 }}
         className="flex flex-col gap-2"
       >

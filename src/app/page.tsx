@@ -10,8 +10,9 @@ import { navItems } from "@/data";
 export default function HomePage() {
   return (
     <div
+      data-testid="top"
       id="top"
-      className="relative  min-h-screen bg-zinc-900 overflow-hidden"
+      className="relative  min-h-screen bg-zinc-900 text-white overflow-hidden"
     >
       <FloatingNav navItems={navItems} />
       <Hero />

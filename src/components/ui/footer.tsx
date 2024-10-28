@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import Link from "next/link";
 import { LinkPreview } from "./link-preview";
-import ProfileImg from "../../../public/profile.png";
+import ProfileImg from "../../../public/myImage/profile.png";
 import Image from "next/image";
 import {
   IconBrandGithub,
@@ -9,46 +9,26 @@ import {
   IconBrandX,
 } from "@tabler/icons-react";
 import { navItems } from "@/data";
-import { Variants, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { SplitWords } from "./split-text";
 import { useLenis } from "lenis/react";
-
-const headingAnimationParentVariants: Variants = {
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.06,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const slideVariants: Variants = {
-  initial: {
-    y: 20,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-  },
-};
+import { parentVariants, slideVariants } from "@/lib/utils";
 
 const Footer = () => {
-  const lenis = useLenis()
+  const lenis = useLenis();
 
   return (
     <motion.footer
       initial="initial"
       whileInView="animate"
       viewport={{ once: true, amount: 0.5 }}
-      variants={headingAnimationParentVariants}
+      variants={parentVariants}
       className="min-h-[50svh] flex flex-col items-center justify-center gap-6"
     >
       <motion.div
         initial="initial"
         whileInView="animate"
-        variants={headingAnimationParentVariants}
+        variants={parentVariants}
         viewport={{ once: true, amount: 0.5 }}
         className="flex items-center gap-2"
       >
@@ -68,7 +48,7 @@ const Footer = () => {
       <motion.div
         initial="initial"
         whileInView="animate"
-        variants={headingAnimationParentVariants}
+        variants={parentVariants}
         viewport={{ once: true, amount: 0.5 }}
         className="flex items-center gap-12"
       >
@@ -79,15 +59,17 @@ const Footer = () => {
               className="text-white text-sm leading-normal tracking-wide"
               key={menu.link}
               href={menu.link}
-              onClick={() => lenis?.scrollTo(menu.link, {
-                offset: 0,
-                lerp: 0.1,
-                duration: 0.8,
-                easing: (rawValue: number) => rawValue, // Example easing function
-                immediate: false,
-                lock: false,
-                force: false,
-              })}
+              onClick={() =>
+                lenis?.scrollTo(menu.link, {
+                  offset: 0,
+                  lerp: 0.1,
+                  duration: 0.8,
+                  easing: (rawValue: number) => rawValue, // Example easing function
+                  immediate: false,
+                  lock: false,
+                  force: false,
+                })
+              }
             >
               <motion.span variants={slideVariants}>{menu.name}</motion.span>
             </Link>

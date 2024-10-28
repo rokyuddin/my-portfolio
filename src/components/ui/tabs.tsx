@@ -1,31 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { motion, Variants } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import { cn, parentVariants, slideVariants } from "@/lib/utils";
 import Image from "next/image";
 import { SplitWords } from "./split-text";
-
-const headingAnimationParentVariants: Variants = {
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.06,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const slideVariants: Variants = {
-  initial: {
-    y: 20,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-  },
-};
 
 type Tab = {
   value: string;
@@ -65,7 +44,7 @@ export const Tabs = ({
         initial="initial"
         whileInView={"animate"}
         viewport={{ once: true, amount: 0.5 }}
-        variants={headingAnimationParentVariants}
+        variants={parentVariants}
         className={cn(
           "w-full md:w-32 flex flex-row lg:flex-col justify-start [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar",
           containerClassName
@@ -115,7 +94,7 @@ export const Tabs = ({
         initial="initial"
         whileInView={"animate"}
         viewport={{ once: true, amount: 0.5 }}
-        variants={headingAnimationParentVariants}
+        variants={parentVariants}
         className="w-full"
       >
         <h3 className="text-xl 3xl:text-2xl font-semibold mb-1 text-white">
@@ -138,7 +117,7 @@ export const Tabs = ({
           initial="initial"
           whileInView={"animate"}
           viewport={{ once: true, amount: 0.5 }}
-          variants={headingAnimationParentVariants}
+          variants={parentVariants}
           className="list-none space-y-2"
         >
           {active.content?.responsibilities?.map((responsibility, index) => (
@@ -151,7 +130,7 @@ export const Tabs = ({
             initial="initial"
             whileInView={"animate"}
             viewport={{ once: true, amount: 0.5 }}
-            variants={headingAnimationParentVariants}
+            variants={parentVariants}
             className="flex gap-2 flex-wrap"
           >
             {active.content?.skills.map((skill) => (

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn, parentVariants } from "@/lib/utils";
 
 export const LampContainer = ({
   children,
@@ -77,9 +77,15 @@ export const LampContainer = ({
         <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-zinc-900 "></div>
       </div>
 
-      <div className="relative container mx-auto z-50 flex -translate-y-40 flex-col items-center">
+      <motion.div
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.8 }}
+        variants={parentVariants}
+        className="relative container mx-auto z-50 flex -translate-y-40 flex-col items-center"
+      >
         {children}
-      </div>
+      </motion.div>
     </div>
   );
 };

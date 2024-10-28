@@ -3,48 +3,18 @@ import { projects } from "@/data";
 import { PinContainer } from "./ui/3d-pin";
 import { IconArrowRight } from "@tabler/icons-react";
 import Image from "next/image";
-import { Variants, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { SplitWords } from "./ui/split-text";
-
-const headingAnimationParentVariants: Variants = {
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.06,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const projectsAnimationParentVariants: Variants = {
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.02,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const slideVariants: Variants = {
-  initial: {
-    y: 20,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-  },
-};
+import { childVariants, parentVariants, slideVariants } from "@/lib/utils";
 
 const Projects = () => {
   return (
-    <section id="projects">
+    <section data-testid="projects-section" id="projects">
       <div className="container w-full py-20 flex flex-col gap-10">
         <motion.div
           initial="initial"
           whileInView="animate"
-          variants={headingAnimationParentVariants}
+          variants={parentVariants}
           viewport={{ once: true, amount: 0.8 }}
           className="flex flex-col lg:justify-center lg:items-center max-w-2xl mx-auto gap-2"
         >
@@ -79,7 +49,7 @@ const Projects = () => {
         <motion.div
           initial="initial"
           whileInView="animate"
-          variants={projectsAnimationParentVariants}
+          variants={childVariants}
           viewport={{ once: true, amount: 0.2 }}
           className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] 3xl:grid-cols-3 place-items-center sm:place-self-stretch  gap-8 md:gap-12"
         >
@@ -111,7 +81,7 @@ const Projects = () => {
                     {item.iconLists.map((icon, index) => (
                       <div
                         key={index}
-                        className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                        className="border border-white/[.2] rounded-full bg-zinc-700 lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
                         style={{
                           transform: `translateX(-${5 * index + 2}px)`,
                         }}
