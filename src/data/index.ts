@@ -14,7 +14,7 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Red Limos Chauffeur Service",
+    title: "Rydr Chauffeur Service",
     des: "Created a responsive website for a chauffeur service, enabling users to book various trips while managing drivers, vehicles, and clients efficiently.",
     img: "/projects/project2.png",
     iconLists: [
