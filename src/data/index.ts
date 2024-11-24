@@ -23,7 +23,7 @@ export const projects = [
       "/technologies/ts.svg",
       "/technologies/next.svg",
     ],
-    link: "https://www.redlimos.com/",
+    link: "https://dev.rydr.app",
   },
   {
     id: 3,
