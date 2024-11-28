@@ -33,7 +33,7 @@ const Hero = () => {
         >
           <Link
             href={
-              "https://drive.google.com/file/d/1EpIcKB_7dfyzIA1QDYQq5ot0v4y08iqL/view?usp=sharing"
+              "https://drive.google.com/file/d/1ZUg-Zg88Ogds0PBDAjC0kG95ClfoE6Qy/view?usp=sharing"
             }
             target="_blank"
           >
