@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https://arfanroky.cloud/sitemap.xml",
-    host: "https://arfanroky.cloud",
+    sitemap: "https://rokyuddin.vercel.app/sitemap.xml",
+    host: "https://rokyuddin.vercel.app",
   };
 }
