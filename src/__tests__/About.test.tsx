@@ -94,7 +94,7 @@ describe("About Component", () => {
 
   it("renders the profile image", () => {
     render(<About />);
-    const image = screen.getByAltText("Arfan Roky Profile Image");
+    const image = screen.getByAltText("Md Rokyuddin Profile Image");
     expect(image).toBeInTheDocument();
     expect(image).toHaveAttribute("src");
   });

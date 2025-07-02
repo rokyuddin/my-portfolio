@@ -25,7 +25,7 @@ const Hero = () => {
           variants={slideVariants}
           className="text-zinc-400 mx-auto text-center leading-[140%] text-lg 3xl:text-xl"
         >
-          Hi! I&apos;m Arfan Roky, a Frontend Developer based in Bangladesh.
+          Hi! I&apos;m Md Rokyuddin, a Frontend Developer based in Bangladesh.
         </motion.p>
         <motion.div
           variants={slideVariants}

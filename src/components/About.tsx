@@ -85,7 +85,7 @@ const About = () => {
                   variants={slideVariants}
                   className="mt-4 text-sm md:text-base 3xl:text-lg font-normal tracking-wide leading-loose text-zinc-400"
                 >
-                  Meet Arfan Roky, the self-taught frontend enthusiast who can
+                  Meet Md Rokyuddin, the self-taught frontend enthusiast who can
                   transform ideas into sleek, responsive web applications. His
                   dedication to crafting clean, intuitive user experiences is
                   matched only by his drive to learn the latest web technologies
@@ -220,7 +220,7 @@ const About = () => {
             >
               <Image
                 src={ProfileImg}
-                alt="Arfan Roky Profile Image"
+                alt="Md Rokyuddin Profile Image"
                 width={450}
                 height={300}
                 quality={100}

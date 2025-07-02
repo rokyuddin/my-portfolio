@@ -35,14 +35,14 @@ const Footer = () => {
         <motion.div variants={slideVariants}>
           <Image
             src={ProfileImg}
-            alt="Arfan Roky"
+            alt="Md Rokyuddin"
             width={40}
             height={40}
             className="object-cover rounded-full"
           />
         </motion.div>
         <h4 className="text-lg font-bold text-white">
-          <SplitWords variants={slideVariants}>Arfan Roky</SplitWords>
+          <SplitWords variants={slideVariants}>Md Rokyuddin</SplitWords>
         </h4>
       </motion.div>
       <motion.div
@@ -88,20 +88,20 @@ const Footer = () => {
         variants={slideVariants}
         className="text-sm leading-[140%] tracking-widest text-slate-300"
       >
-        © 2024 Arfan Roky. All rights reserved.
+        © 2024 Md Rokyuddin. All rights reserved.
       </motion.p>
       <motion.div variants={slideVariants} className="flex items-center gap-2">
-        <LinkPreview url="https://x.com/arfanroky_dev">
+        <LinkPreview url="https://x.com/rokyuddin_dev">
           <div className="w-10 h-10 rounded-full bg-zinc-800 backdrop-blur-lg  text-white flex items-center justify-center">
             <IconBrandX size={18} />
           </div>
         </LinkPreview>
-        <LinkPreview url="https://linkedin.com/in/arfanroky">
+        <LinkPreview url="https://linkedin.com/in/rokyuddin">
           <div className="w-10 h-10 rounded-full bg-zinc-800 backdrop-blur-lg  text-white flex items-center justify-center">
             <IconBrandLinkedin size={18} />
           </div>
         </LinkPreview>
-        <LinkPreview url="https://github.com/arfan-roky">
+        <LinkPreview url="https://github.com/rokyuddin">
           <div className="w-10 h-10 rounded-full bg-zinc-800 backdrop-blur-lg  text-white flex items-center justify-center">
             <IconBrandGithub size={18} />
           </div>

@@ -10,20 +10,20 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Arfan Roky Portfolio",
+  title: "Md Rokyuddin",
   description: "Learn To Develop Sites With Expertise Developer",
-  metadataBase: new URL("https://arfanroky.cloud"),
+  metadataBase: new URL("https://rokyuddin.vercel.app/"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Arfan Roky Portfolio",
+    title: "Md Rokyuddin Portfolio",
     description: "Learn To Develop Sites With Expertise Developer",
-    url: "https://arfanroky.cloud",
-    siteName: "Arfan Roky Portfolio",
+    url: "https://rokyuddin.vercel.app/",
+    siteName: "Md Rokyuddin Portfolio",
     images: [
       {
-        url: "https://arfanroky.cloud/opengraph-image.png",
+        url: "https://rokyuddin.vercel.app/opengraph-image.png",
         width: 1200,
         height: 630,
       },
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arfan Roky Portfolio",
+    title: "Md Rokyuddin Portfolio",
     description: "Learn To Develop Sites With Expertise Developer",
-    images: ["https://arfanroky.cloud/twitter-image.png"],
+    images: ["https://rokyuddin.vercel.app/twitter-image.png"],
   },
   robots: {
     index: true,
