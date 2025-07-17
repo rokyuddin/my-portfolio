@@ -115,10 +115,10 @@ const About = () => {
                   >
                     <IconMail size={18} className="text-blue-500" />
                     <Link
-                      href={"mailto:arfanroky.dev@gmail.com"}
+                      href={"mailto:rokyuddin.dev@gmail.com"}
                       className="text-zinc-400 text-sm 3xl:text-lg font-light"
                     >
-                      arfanroky.dev@gmail.com
+                      rokyuddin.dev@gmail.com
                     </Link>
                   </motion.div>
                   <motion.div
@@ -151,12 +151,12 @@ const About = () => {
                     variants={slideVariants}
                     className="flex items-center gap-2"
                   >
-                    <LinkPreview url="https://x.com/arfanroky_dev">
+                    <LinkPreview url="https://x.com/rokyuddin_dev">
                       <div className="w-8 h-8 rounded-full bg-zinc-700 backdrop-blur-lg  text-white flex items-center justify-center">
                         <IconBrandX size={16} />
                       </div>
                     </LinkPreview>
-                    <LinkPreview url="https://linkedin.com/in/arfanroky">
+                    <LinkPreview url="https://linkedin.com/in/rokyuddin">
                       <div className="w-8 h-8 rounded-full bg-zinc-700 backdrop-blur-lg  text-white flex items-center justify-center">
                         <IconBrandLinkedin size={16} />
                       </div>

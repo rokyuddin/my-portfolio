@@ -76,7 +76,7 @@ const Footer = () => {
           ))}
         <Link
           className="text-white text-sm leading-normal tracking-wide"
-          href={"mailto:arfanroky.dev@gmail.com"}
+          href={"mailto:rokyuddin.dev@gmail.com"}
         >
           <motion.span>Contact</motion.span>
         </Link>

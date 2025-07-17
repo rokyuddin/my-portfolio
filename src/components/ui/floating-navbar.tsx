@@ -94,7 +94,7 @@ export const FloatingNav = ({
             <span className="text-xs sm:text-sm">{navItem.name}</span>
           </Link>
         ))}
-        <Link href={`mailto:arfanroky.dev@gmail.com`}>
+        <Link href={`mailto:rokyuddin.dev@gmail.com`}>
           <button className="border text-sm font-medium relative border-neutral-200 text-white  px-4 py-2 rounded-full">
             <span>Contact</span>
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />

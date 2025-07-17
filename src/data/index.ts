@@ -1,5 +1,18 @@
 export const projects = [
   {
+    id: 4,
+    title: "SkinSight - Your personalized skincare companion",
+    des: "SkinSight is a cutting-edge skincare website that empowers users to track their skincare routine and receive personalized skincare recommendations.",
+    img: "/projects/project4.png",
+    iconLists: [
+      "/technologies/re.svg",
+      "/technologies/tail.svg",
+      "/technologies/ts.svg",
+      "/technologies/next.svg",
+    ],
+    link: "https://skinsight.me/",
+  },
+  {
     id: 1,
     title: "Motion Designer Portfolio",
     des: "Developed a sleek portfolio site with video hero section, showcasing diverse services and top-notch motion design for global impact.",
@@ -23,7 +36,7 @@ export const projects = [
       "/technologies/ts.svg",
       "/technologies/next.svg",
     ],
-    link: "https://dev.rydr.app",
+    link: "https://rydr-web.miicon.net/",
   },
   {
     id: 3,
@@ -36,7 +49,7 @@ export const projects = [
       "/technologies/ts.svg",
       "/technologies/next.svg",
     ],
-    link: "https://www.modinaautopartsltd.com/",
+    link: "https://modinaautopartsltd.com/",
   },
 ];
 
