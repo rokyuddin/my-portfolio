@@ -161,7 +161,7 @@ const About = () => {
                         <IconBrandLinkedin size={16} />
                       </div>
                     </LinkPreview>
-                    <LinkPreview url="https://github.com/arfan-roky">
+                    <LinkPreview url="https://github.com/rokyuddin">
                       <div className="w-8 h-8 rounded-full bg-zinc-700 backdrop-blur-lg  text-white flex items-center justify-center">
                         <IconBrandGithub size={16} />
                       </div>
