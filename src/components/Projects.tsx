@@ -1,11 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
 import { projects } from "@/data";
-import { PinContainer } from "./ui/3d-pin";
 import { IconArrowRight } from "@tabler/icons-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { SplitWords } from "./ui/split-text";
 import { childVariants, parentVariants, slideVariants } from "@/lib/utils";
+import Link from "next/link";
 
 const Projects = () => {
   return (
@@ -51,30 +50,31 @@ const Projects = () => {
           whileInView="animate"
           variants={childVariants}
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] 3xl:grid-cols-3 place-items-center sm:place-self-stretch  gap-8 md:gap-12"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
         >
           {projects.map((item) => (
-            <motion.div
-              key={item.id}
-              variants={slideVariants}
-              className="  h-[25rem] lg:min-h-[32.5rem] 3xl:h-[40rem] flex items-center justify-center  w-[80vw] sm:w-[380px] 4xl:w-[650px]"
-            >
-              <PinContainer title={"visit"} href={item.link}>
-                <div className="flex items-center justify-center  w-[80vw] sm:w-[380px] 4xl:w-[650px] overflow-hidden h-[200px] lg:h-[250px] 4xl:h-[400px]">
-                  <img
+            <motion.div key={item.id} variants={slideVariants}>
+              <div className="relative shadow-3xl bg-grad p-4 rounded-lg overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300">
+                <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
+                <div className="w-full h-[280px] relative overflow-hidden rounded-lg">
+                  <Image
                     src={item.img}
                     alt="cover"
-                    className="z-10 object-cover object-center rounded-lg"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
 
-                <h1 className="font-bold text-base  md:text-xl lg:text-xl line-clamp-1 text-white">
-                  {item.title}
-                </h1>
+                <div className="mt-4">
+                  <h1 className="font-bold text-base  md:text-xl lg:text-xl line-clamp-1 text-white">
+                    {item.title}
+                  </h1>
 
-                <p className="text-sm lg:text-base 3xl:text-lg mt-2 lg:font-normal font-light  line-clamp-3 text-zinc-400">
-                  {item.des}
-                </p>
+                  <p className="text-sm lg:text-base 3xl:text-lg mt-2 lg:font-normal font-light  line-clamp-3 text-zinc-400">
+                    {item.des}
+                  </p>
+                </div>
 
                 <div className="flex items-center justify-between mt-7 mb-3">
                   <div className="flex items-center">
@@ -97,14 +97,18 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  <div className="flex justify-center items-center">
+                  <Link
+                    href={item.link}
+                    target="_blank"
+                    className="flex justify-center items-center"
+                  >
                     <p className="flex text-sm text-blue-500">
                       Check Live Site
                     </p>
                     <IconArrowRight className="ms-3 -rotate-45 text-blue-500" />
-                  </div>
+                  </Link>
                 </div>
-              </PinContainer>
+              </div>
             </motion.div>
           ))}
         </motion.div>

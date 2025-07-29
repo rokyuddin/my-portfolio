@@ -1,5 +1,5 @@
 "use client";
-import ProfileImg from "../../public/myImage/Roky_main.png";
+import ProfileImg from "../../public/myImage/Roky_main.jpeg";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -218,21 +218,20 @@ const About = () => {
               viewport={{ once: true, amount: 0.2 }}
               className="lg:basis-[35%] flex items-center  justify-center lg:justify-end "
             >
-              <div className="relative w-[450px] h-[300px] overflow-hidden rounded-full">
-
-              <Image
-                src={ProfileImg}
-                alt="Md Rokyuddin Profile Image"
-                width={450}
-                height={300}
-                quality={100}
-                priority
-                style={{ width: "auto", height: "auto" }}
-                // className="object-cover bg-gradient-to-t from-blue-300 via-blue-500 to-blue-300 overflow-hidden rounded-full"
-                placeholder="blur"
-                blurDataURL={generateBlurPlaceholder(450, 300)}
+              <div className="relative w-[450px] h-[450px] border overflow-hidden rounded-full">
+                <Image
+                  src={ProfileImg}
+                  alt="Md Rokyuddin Profile Image"
+                  width={450}
+                  height={450}
+                  quality={100}
+                  priority
+                  style={{ width: "auto", height: "auto" }}
+                  className="object-cover bg-gradient-to-t from-blue-300 via-blue-500 to-blue-300 overflow-hidden rounded-full"
+                  placeholder="blur"
+                  blurDataURL={generateBlurPlaceholder(450, 300)}
                 />
-                </div>
+              </div>
             </motion.div>
           </div>
           <Experiences />
