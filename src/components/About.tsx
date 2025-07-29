@@ -218,6 +218,8 @@ const About = () => {
               viewport={{ once: true, amount: 0.2 }}
               className="lg:basis-[35%] flex items-center  justify-center lg:justify-end "
             >
+              <div className="relative w-[450px] h-[300px] overflow-hidden rounded-full">
+
               <Image
                 src={ProfileImg}
                 alt="Md Rokyuddin Profile Image"
@@ -226,10 +228,11 @@ const About = () => {
                 quality={100}
                 priority
                 style={{ width: "auto", height: "auto" }}
-                className="object-cover bg-gradient-to-t from-blue-300 via-blue-500 to-blue-300 rounded-full"
+                // className="object-cover bg-gradient-to-t from-blue-300 via-blue-500 to-blue-300 overflow-hidden rounded-full"
                 placeholder="blur"
                 blurDataURL={generateBlurPlaceholder(450, 300)}
-              />
+                />
+                </div>
             </motion.div>
           </div>
           <Experiences />
